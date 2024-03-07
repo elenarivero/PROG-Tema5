@@ -5,7 +5,7 @@ public class Principal {
 	public static void main(String[] args) {
 		CuentaCorriente c1 = new CuentaCorriente("12345678Z", 5);
 		CuentaCorriente c2 = new CuentaCorriente("11111111H", 100);
-			
+		
 		c1.setNombre("Pepe");
 		c1.mostrarInformacion();
 		System.out.println();
