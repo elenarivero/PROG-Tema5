@@ -13,6 +13,8 @@ public class Principal {
 		double precioVenta;
 		int stock;
 		Articulo art;
+		boolean anyadido;
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("BIENVENIDO A GESTISIMAL");
@@ -45,7 +47,12 @@ public class Principal {
 			sc.nextLine();
 			
 			art = new Articulo(codigo, descripcion, precioCompra, precioVenta, stock);
-			Gestisimal.alta(art);
+			anyadido = Gestisimal.alta(art);
+			if(anyadido) {
+				System.out.println("Artículo añadido correctamente");
+			} else {
+				System.out.println("No se ha podido añadir el artículo");
+			}
 			break;
 		}
 		
