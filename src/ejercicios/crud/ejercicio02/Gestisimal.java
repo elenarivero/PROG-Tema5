@@ -6,43 +6,52 @@ public class Gestisimal {
 
 	public static boolean alta(Articulo art) {
 		boolean anyadido = false;
-		
+
 		// 1º Comprobar si el artículo ya existe
 		int i = 0;
-		boolean enc = buscaArticulo(art);
+		int pos = buscaArticulo(art);
 
 		// Si no he encontrado el artículo lo tengo que añadir
-		if(!enc) {
-			
-			while(i<articulos.length && articulos[i]!=null) {
+		if (pos == -1) {
+
+			while (i < articulos.length && articulos[i] != null) {
 				i++;
 			}
-			
-			if(i<articulos.length) {
+
+			if (i < articulos.length) {
 				articulos[i] = art;
 				anyadido = true;
 			}
 		}
-		
+
 		return anyadido;
 	}
-	
-	private static boolean buscaArticulo(Articulo art) {
-		int i = 0;
-		boolean enc = false;
 
-		while (i < articulos.length && !enc) {
+//	public static boolean modifica(Articulo art) {
+//		//int pos = buscaArticulo(art);
+//		
+//		/* Si encontramos el artículo se modifica */
+//		if(pos>=0) {
+//			
+//		}
+//	}
+
+	public static int buscaArticulo(Articulo art) {
+		int i = 0;
+		int pos = -1;
+
+		while (i < articulos.length && pos==-1) {
 			// Compruebo que la posición no sea null
 			// Compruebo si el artículo de la posición i es igual a art (artículo pasado por
 			// parámetro)
 			if (articulos[i] != null && articulos[i].equals(art)) {
-				enc = true;
+				pos = i;
 			}
 
 			i++;
 		}
 		
-		return enc;
+		return pos;
 	}
 
 }

@@ -42,6 +42,11 @@ public class Articulo {
 	public Articulo() {
 	}
 	
+	public Articulo (int codigo) {
+		if(codigo>0) {
+			this.codigo = codigo;
+		}
+	}
 	/**
 	 * Constructor con parámetros
 	 * @param codigo Código del artículo
