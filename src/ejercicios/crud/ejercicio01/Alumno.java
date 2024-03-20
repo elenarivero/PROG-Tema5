@@ -3,11 +3,10 @@ package ejercicios.crud.ejercicio01;
 public class Alumno {
 
 	private String nombre="";
-	private double notaMedia;
+	private double notaMedia=1.0;
 	
 	public Alumno() {
-		this.nombre = "";
-		this.notaMedia = 0.0;
+		
 	}
 	
 	public Alumno(String nombre, double notaMedia) {
@@ -15,7 +14,7 @@ public class Alumno {
 			this.nombre = nombre;
 		}
 		
-		if(notaMedia>=0 && notaMedia<=10) {
+		if(notaMedia>=1 && notaMedia<=10) {
 			this.notaMedia = notaMedia;
 		}
 	}
@@ -29,7 +28,7 @@ public class Alumno {
 	}
 	
 	public void setNotaMedia(double notaMedia) {
-		if(notaMedia>=0 && notaMedia<=10) {
+		if(notaMedia>=1 && notaMedia<=10) {
 			this.notaMedia = notaMedia;
 		}
 	}

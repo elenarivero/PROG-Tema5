@@ -14,6 +14,8 @@ public class Principal {
 		int pos;
 		int cantidad;
 		
+		new Articulo(5).getStock();
+		
 		System.out.println("BIENVENIDO A GESTISIMAL");
 		do {
 			menu();
