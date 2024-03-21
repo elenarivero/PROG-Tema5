@@ -2,40 +2,55 @@ package ejercicios.crud.ejercicio03;
 
 public class ArrayPizzas {
 	private static Pizza[] pizzas = new Pizza[50];
-	
+
 	public static void listarPizzas() {
-		for(Pizza p : pizzas) {
-			if(p != null) {
+		for (Pizza p : pizzas) {
+			if (p != null) {
 				System.out.println(p);
 				System.out.println("------------------------");
 			}
 		}
 	}
-	
-	
+
 	public static int posLibre() {
 		int pos = -1;
 		int i = 0;
-		
-		while (i<pizzas.length && pos == -1) {
-			if(pizzas[i] == null) {
+
+		while (i < pizzas.length && pos == -1) {
+			if (pizzas[i] == null) {
 				pos = i;
 			}
 			i++;
 		}
-		
+
 		return pos;
 	}
-	
+
 	public static boolean addPizza(Pizza p) {
 		boolean anyadida = false;
 		int pos = posLibre();
-		
-		if(pos != -1) {
+
+		if (pos != -1) {
 			pizzas[pos] = p;
 			anyadida = true;
 		}
-		
+
 		return anyadida;
+	}
+
+	public static Pizza buscaPizza(int codigo) {
+		boolean enc = false;
+		int i = 0;
+		Pizza p = null;
+
+		while (i < pizzas.length && !enc) {
+			if (pizzas[i] != null && pizzas[i].getCodigo() == codigo) {
+				p = pizzas[i];
+				enc = true;
+			}
+			i++;
+		}
+		
+		return p;
 	}
 }

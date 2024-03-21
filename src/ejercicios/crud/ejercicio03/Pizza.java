@@ -55,7 +55,7 @@ public class Pizza {
 		res += "Código: " + this.codigo + "\n";
 		res += "Tamaño: " + this.tam + "\n";
 		res += "Tipo: " + this.tipo + "\n";
-		res += "Estado: " + this.estado + "\n";		
+		res += "Estado: " + this.estado;		
 		return res;
 	}
 	
